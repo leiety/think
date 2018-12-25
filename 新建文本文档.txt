@@ -1,0 +1,6 @@
+环境变色
+	按钮
+	<button type="submit" class="btn btn-primary" id="form_btn">提 交</button>
+	
+	alert
+	swal.setDefaults({confirmButtonClass: 'bg-themeprimary', allowOutsideClick: false, confirmButtonText: '确定'})

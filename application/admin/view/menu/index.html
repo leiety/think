@@ -1,0 +1,62 @@
+{extend name="base" /}
+{block name="headjs"}{/block}
+
+
+{block name="content"}
+				<form action="{:url('admin/menu/sort')}" id="form_data" method="post">
+	                <div class="content">
+	                    <table class="table table-bordered table-hover tablecenter">
+			                <thead class="bordered">
+			                    <tr>
+			                        <th>id</th>
+			                        <th>排序</th>
+			                        <th>菜单名称</th>
+			                        <th>状态</th>
+			                        <th>操作</th>
+			                    </tr>
+			                </thead>
+			                <tbody>
+{foreach $menus as $v}
+			                    <tr>
+			                        <td>{$v.id}</td>
+			                        <td><input class="form-fang" type="text" name="sort[{$v.id}]" value="{$v.sort}"></td>
+			                        <td class="textleft">{$v.name|raw}</td>
+			                        <td>{if $v.display}<h8 class="green">启用</h8>{else /}<h8 class="red">停用</h8>{/if}</td>
+			                        <td>
+			                        	<a href="{:url('admin/menu/add', array('id'=>$v.id))}" class="btn btn-default btn-xs purple"><i class="fa fa-plus"></i> 新增下级</a>
+			                        	<a href="{:url('admin/menu/edit', array('id'=>$v.id))}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i> 修改</a>
+			                        	<a href="javascript:;" onclick="del('{:url('admin/menu/del', array('id'=>$v.id))}')" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> 删除</a>
+			                        </td>
+			                    </tr>
+{/foreach}
+			                </tbody>
+			            </table>
+	                </div>
+
+	                <div class="footer">
+	                	<button class="btn btn-primary " type="submit">排序</button>
+	                </div>
+	            </form>
+{/block}
+
+
+{block name="footjs"}
+		<script src="__STATICS__/assets/js/validation/bootstrapValidator.js?v=__VERSION__"></script>
+        <script type="text/javascript">
+        	$(function() {
+		    	bepost($('#form_data'));
+        	});
+
+			function del(url) {
+				swal({
+					title: '确定删除吗？',
+					type: 'warning',
+					showCancelButton: true
+				}).then(function(result){
+					if (result.value) {
+						swget(url);
+					}
+				});
+			}
+		</script>
+{/block}

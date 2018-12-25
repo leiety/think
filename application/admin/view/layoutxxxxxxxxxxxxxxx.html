@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Blank Page</title>
+    <meta name="description" content="blank page" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="__STATICS__/assets/img/favicon.png" type="image/x-icon">
+    <link href="__STATICS__/css/bootstrap.css?v=__VERSION__" rel="stylesheet"/>
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="__STATICS__/css/css.css?v=__VERSION__&family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
+    <link href="__STATICS__/css/beyond.css?v=__VERSION__" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="__STATICS__/css/common.css?v=__VERSION__">
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <script src="__STATICS__/bundles/skin.js?v=__VERSION__"></script>
+    <script src="__STATICS__/bundles/jquery.js?v=__VERSION__"></script>
+</head>
+<body>
+    <!-- Loading Container -->
+    <div class="loading-container">
+        <div class="loader"></div>
+    </div>
+    <!--  /Loading Container -->
+    <!-- Navbar -->
+    {include file="header"}
+    <!-- /Navbar -->
+    <!-- Main Container -->
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            {include file='left'}
+            <!-- /Page Sidebar -->
+            <!-- Chat Bar -->
+            {include file='chat'}
+            <!-- /Chat Bar -->
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page Breadcrumb -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li class="active">
+                            <i class="fa fa-home"></i>
+                            <a href="/{:config('name')}/">首页</a>
+                        </li>
+                        <li class="active">
+                            <a href="javascript:;">系统功能</a>
+                        </li>
+                        <li class="active">
+                            <a href="javascript:;">系统管理员</a>
+                        </li>
+                        <li>管理员列表</li>
+                    </ul>
+                </div>
+                <!-- /Page Breadcrumb -->
+                <!-- Page Header -->
+                <div class="page-header position-relative" style="display: none;">
+                    <div class="header-title">
+                        <h1>
+                            列表页
+                            <small>
+                                <i class="fa fa-angle-right"></i>
+                                内容页
+                            </small>
+                        </h1>
+                    </div>
+                    <!--Header Buttons-->
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                    <!--Header Buttons End-->
+                </div>
+                <!-- /Page Header -->
+                <!-- Page Body -->
+                <div class="page-body">                    
+                    
+                {__CONTENT__}
+
+                </div>
+                <!-- /Page Body -->
+                {include file='footer'}
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <!-- /Page Container -->
+        <!-- Main Container -->
+
+    </div>
+</body>
+</html>

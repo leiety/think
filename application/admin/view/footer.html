@@ -1,0 +1,27 @@
+<style type="text/css">
+#footer{left: 224px; bottom:  0; position: fixed; padding:  8px;background: #fff;z-index: 999;border-top: 1px solid #dddddd;border-left: 1px solid #dddddd;right: 0;}
+.f80{left: 47px!important;}
+.f100{width: 100%!important;left: 0!important}
+.page-body .with-footer{margin-bottom: 54px;}
+
+@media only screen and (max-width: 530px){
+    #footer{display: none;}
+    .page-body .with-footer{margin-bottom: 16px;}
+}
+</style>
+                <div id="footer" class="page-header position-relative">
+                    <span class="fl" style="float: left;">Powered by <a href="http://www.hisiphp.com" target="_blank">HisiPHP</a> v1.0.8</span>
+                    <span class="fr" style="float: right;"> © 2017-2018 <a href="http://www.hisiphp.com" target="_blank">HisiPHP.com</a> All Rights Reserved.</span>
+                </div>
+                <script src="__STATICS__/bundles/bootstrap.js?v=__VERSION__"></script>
+                <script src="__STATICS__/bundles/beyond.js?v=__VERSION__"></script>
+                <link href="__STATICS__/js/swal/sweetalert2.min.css" rel="stylesheet">
+                <script src="__STATICS__/js/swal/sweetalert2.all.min.js"></script>
+                <script src="__STATICS__/js/common.js"></script>
+                <script type="text/javascript">
+                    var url = '<?php echo Request::instance() -> url(); ?>';
+                    $('.sidebar-menu li a[href="'+url+'"]').parents('li').parents('li').addClass('open');
+                    $('.sidebar-menu li a[href="'+url+'"]').parents('li').parents('li').parents('li').addClass('open');
+                    $('.sidebar-menu li a[href="'+url+'"]').parent('li').addClass('active');
+                    $('.sidebar-menu li a[href="'+url+'"]').parent('li.open').removeClass('active');
+                </script>
